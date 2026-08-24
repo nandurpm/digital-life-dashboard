@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "widgets": [
+    { "id": "clock", "enabled": true },
+    { "id": "system", "enabled": true },
+    { "id": "github", "enabled": true },
+    { "id": "notes", "enabled": true },
+    { "id": "links", "enabled": true }
+  ],
+  "githubUsername": "",
+  "notes": "Example local note.",
+  "quickLinks": [
+    { "id": "github", "label": "GitHub", "url": "https://github.com", "accent": "emerald" }
+  ]
+}
