@@ -3,6 +3,7 @@ import { defaultConfig, isWidgetEnabled, moveWidget, toggleWidget, validateConfi
 import { fetchGitHubActivity } from "../src/api";
 import { parseProductivityInsight, prepareInsightInput, requestProductivityInsights } from "../src/insights";
 import { MemoryStore, loadConfig, saveConfig } from "../src/storage";
+import { loadDarkMode, saveDarkMode } from "../src/theme";
 import { createCoreRegistry, WidgetRegistry } from "../src/widgets";
 
 describe("widget plugins", () => {
@@ -35,6 +36,15 @@ describe("configuration and persistence", () => {
     store.setItem("digital-life-dashboard:config", "{not valid json");
     expect(loadConfig(store, defaultConfig()).notes).toBe(defaultConfig().notes);
     expect(() => validateConfig({ version: 1, widgets: [] })).toThrow();
+  });
+
+  it("persists an explicit theme choice and otherwise uses the system preference", () => {
+    const store = new MemoryStore();
+    expect(loadDarkMode(store, true)).toBe(true);
+    saveDarkMode(store, false);
+    expect(loadDarkMode(store, true)).toBe(false);
+    saveDarkMode(store, true);
+    expect(loadDarkMode(store, false)).toBe(true);
   });
 });
 

@@ -31,6 +31,10 @@ No Manus production URL has been published for this project yet. When it is publ
 
 The optional AI widget is **user-triggered** and uses `gpt-5-mini` to turn privacy-minimized dashboard aggregates into small productivity suggestions. It excludes notes, quick-link content, GitHub usernames and repositories, account data, and raw system details. The dashboard remains fully usable if the model is not configured. For a portable local deployment, copy [`.env.example`](.env.example) to an uncommitted `.env` file and configure your own optional AI endpoint and key; see [`docs/AI_INSIGHTS.md`](docs/AI_INSIGHTS.md).
 
+## Theme and AI loading experience
+
+The overview header includes a dark mode toggle. Its explicit light/dark choice is stored only in the active browser and otherwise follows the operating-system preference. The AI insight widget uses a clear loading announcement and a subtle shimmer while its aggregate-only request is in progress. It keeps the last validated result visible during refresh and respects reduced-motion preferences. See [`docs/THEME_AND_ANIMATION.md`](docs/THEME_AND_ANIMATION.md) for details.
+
 ## Security and privacy
 
 Dashboard configuration is stored under one browser-local key and remains on the device unless a user exports it. Do not put access tokens, passwords, or private URLs in notes or quick links. The optional GitHub panel requests only the selected account’s public events through GitHub’s public API and shows a recoverable error when the request fails.

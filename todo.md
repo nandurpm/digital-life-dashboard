@@ -18,3 +18,4 @@
 - [x] Add documented Linux and Windows local-run support with configurable port guidance and the published Manus URL field in the Project 2 README.
 - [x] Verify the Project 2 local-run scripts, README guidance, package scripts, and selected-port launch behavior before marking portability support complete.
 - [x] Fix and regression-test the complete local production server’s AI unavailable response path.
+- [x] Add a persisted accessible dark mode toggle and smooth reduced-motion-aware loading animation for AI insights.
