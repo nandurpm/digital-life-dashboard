@@ -5,12 +5,17 @@
   "type": "module",
   "license": "MIT",
   "scripts": {
-    "dev": "vite --host 0.0.0.0",
+    "dev": "node server.mjs",
+    "dev:local": "node scripts/run-local.mjs dev",
     "build": "tsc -b && vite build",
+    "preview:local": "node scripts/run-local.mjs preview",
+    "start": "node server.mjs",
+    "start:local": "node scripts/run-local.mjs start",
     "check": "tsc --noEmit",
     "test": "vitest run"
   },
   "dependencies": {
+    "dotenv": "^17.4.2",
     "lucide-react": "^0.468.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"

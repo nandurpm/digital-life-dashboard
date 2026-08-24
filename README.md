@@ -21,6 +21,16 @@ pnpm dev
 
 The first run includes local demo notes and quick links. No credentials are committed or required. Open **Customize** to toggle widgets, reorder them, reset the demo configuration, or export/import settings.
 
+## Local Windows and Linux use
+
+Digital Life Dashboard runs as a portable local browser application; it does not need the hosted website. Install Node.js 20+ and pnpm, then use `./run-local.sh` on Linux or `run-local.cmd` on Windows. Both launch the dashboard at `http://127.0.0.1:5173`; add `--port=4300` to choose another port. Build with `pnpm build` and use `pnpm preview:local -- --port=4300` for a static-only preview, or `pnpm start:local -- --port=4300` for the complete optimized local server, including the optional AI endpoint. The detailed guide is available in [`docs/LOCAL_RUN.md`](docs/LOCAL_RUN.md).
+
+No Manus production URL has been published for this project yet. When it is published, the URL will be documented here so users can choose between a managed link and the portable local app.
+
+## AI productivity insights
+
+The optional AI widget is **user-triggered** and uses `gpt-5-mini` to turn privacy-minimized dashboard aggregates into small productivity suggestions. It excludes notes, quick-link content, GitHub usernames and repositories, account data, and raw system details. The dashboard remains fully usable if the model is not configured. For a portable local deployment, copy [`.env.example`](.env.example) to an uncommitted `.env` file and configure your own optional AI endpoint and key; see [`docs/AI_INSIGHTS.md`](docs/AI_INSIGHTS.md).
+
 ## Security and privacy
 
 Dashboard configuration is stored under one browser-local key and remains on the device unless a user exports it. Do not put access tokens, passwords, or private URLs in notes or quick links. The optional GitHub panel requests only the selected account’s public events through GitHub’s public API and shows a recoverable error when the request fails.

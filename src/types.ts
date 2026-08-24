@@ -1,4 +1,4 @@
-export const widgetIds = ["clock", "system", "github", "notes", "links"] as const;
+export const widgetIds = ["clock", "system", "github", "notes", "links", "insights"] as const;
 export type WidgetId = (typeof widgetIds)[number];
 
 export type WidgetConfig = {
@@ -39,4 +39,12 @@ export type SystemSnapshot = {
   online: boolean;
   temperatureC: number | null;
   supportNotes: string[];
+};
+
+export type ProductivityInsight = {
+  summary: string;
+  patterns: string[];
+  suggestions: Array<{ title: string; action: string; why: string }>;
+  boundary: string;
+  model: string;
 };

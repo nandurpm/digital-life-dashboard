@@ -23,6 +23,7 @@ export const coreWidgets: WidgetPlugin[] = [
   { id: "github", name: "GitHub activity", description: "Optional public activity feed.", category: "integration" },
   { id: "notes", name: "Notes", description: "Private browser-stored notes.", category: "personal" },
   { id: "links", name: "Quick links", description: "Personal shortcuts.", category: "personal" },
+  { id: "insights", name: "AI productivity insights", description: "User-triggered suggestions from aggregate dashboard signals.", category: "personal" },
 ];
 
 export function createCoreRegistry() {

@@ -10,3 +10,11 @@
 - [x] Add automated tests for plugin registration, configuration, persistence, API failure handling, and widget enable/disable.
 - [x] Run tests, type checks, and a production build.
 - [x] Create a private GitHub repository, commit, and push the finished Project 2 implementation.
+- [x] Add a user-triggered, privacy-conscious AI insights widget for digital habits and productivity suggestions.
+- [x] Add loading, error, and refresh states plus automated tests for Project 2 AI insight input and output validation.
+- [ ] Document the Project 2 AI insights data boundary, validate the enhancement, and push it to GitHub.
+- [ ] Commit and push Project 2’s verified AI widget, portable local server, and documentation updates to GitHub.
+- [x] Correct the development-server response handoff exposed during live Project 2 AI-insight verification.
+- [x] Add documented Linux and Windows local-run support with configurable port guidance and the published Manus URL field in the Project 2 README.
+- [x] Verify the Project 2 local-run scripts, README guidance, package scripts, and selected-port launch behavior before marking portability support complete.
+- [x] Fix and regression-test the complete local production server’s AI unavailable response path.
