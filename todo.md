@@ -9,4 +9,4 @@
 - [x] Add README, license, contribution guide, changelog, documentation, and example configuration.
 - [x] Add automated tests for plugin registration, configuration, persistence, API failure handling, and widget enable/disable.
 - [x] Run tests, type checks, and a production build.
-- [ ] Create a private GitHub repository, commit, and push the finished Project 2 implementation.
+- [x] Create a private GitHub repository, commit, and push the finished Project 2 implementation.
