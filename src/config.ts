@@ -6,12 +6,15 @@ export const DEFAULT_QUICK_LINKS: QuickLink[] = [
   { id: "github", label: "GitHub", url: "https://github.com", accent: "emerald" },
 ];
 
+export const DASHBOARD_ACCENTS = ["violet", "cyan", "emerald", "amber"] as const;
+
 export const defaultConfig = (): DashboardConfig => ({
   version: 1,
   widgets: widgetIds.map(id => ({ id, enabled: true })),
   githubUsername: "",
   notes: "Welcome to your local-first dashboard. Add a note, connect a public GitHub account, or tailor the widget layout.",
   quickLinks: DEFAULT_QUICK_LINKS,
+  accent: "violet",
 });
 
 const isWidgetConfig = (value: unknown): value is WidgetConfig => {
@@ -34,7 +37,9 @@ export function validateConfig(value: unknown): DashboardConfig {
   if (new Set(candidate.widgets.map(widget => widget.id)).size !== widgetIds.length) throw new Error("Every registered widget must have a configuration entry.");
   if (typeof candidate.githubUsername !== "string" || typeof candidate.notes !== "string") throw new Error("Text settings are malformed.");
   if (!Array.isArray(candidate.quickLinks) || !candidate.quickLinks.every(isQuickLink)) throw new Error("Quick-link configuration is malformed.");
-  return candidate as DashboardConfig;
+  const accent = candidate.accent ?? "violet";
+  if (!DASHBOARD_ACCENTS.includes(accent as (typeof DASHBOARD_ACCENTS)[number])) throw new Error("Accent configuration is malformed.");
+  return { ...candidate, accent } as DashboardConfig;
 }
 
 export function isWidgetEnabled(config: DashboardConfig, id: WidgetConfig["id"]) {

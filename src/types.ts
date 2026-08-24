@@ -13,12 +13,15 @@ export type QuickLink = {
   accent: "cyan" | "violet" | "amber" | "emerald";
 };
 
+export type DashboardAccent = "violet" | "cyan" | "emerald" | "amber";
+
 export type DashboardConfig = {
   version: 1;
   widgets: WidgetConfig[];
   githubUsername: string;
   notes: string;
   quickLinks: QuickLink[];
+  accent: DashboardAccent;
 };
 
 export type GitHubActivity = {

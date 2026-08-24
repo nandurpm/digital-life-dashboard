@@ -46,6 +46,15 @@ describe("configuration and persistence", () => {
     saveDarkMode(store, true);
     expect(loadDarkMode(store, false)).toBe(true);
   });
+
+  it("persists an approved accent and supplies violet for pre-accent local configuration", () => {
+    const accented = validateConfig({ ...defaultConfig(), accent: "emerald" });
+    expect(accented.accent).toBe("emerald");
+    const legacy = { ...defaultConfig() } as Record<string, unknown>;
+    delete legacy.accent;
+    expect(validateConfig(legacy).accent).toBe("violet");
+    expect(() => validateConfig({ ...defaultConfig(), accent: "neon" })).toThrow(/Accent/);
+  });
 });
 
 describe("optional GitHub integration", () => {

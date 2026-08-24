@@ -19,3 +19,4 @@
 - [x] Verify the Project 2 local-run scripts, README guidance, package scripts, and selected-port launch behavior before marking portability support complete.
 - [x] Fix and regression-test the complete local production server’s AI unavailable response path.
 - [x] Add a persisted accessible dark mode toggle and smooth reduced-motion-aware loading animation for AI insights.
+- [x] Add a persisted customizable accent-color picker that applies to light and dark dashboard themes.

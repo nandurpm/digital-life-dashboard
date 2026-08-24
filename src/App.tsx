@@ -30,6 +30,7 @@ import {
 } from "lucide-react";
 import {
   defaultConfig,
+  DASHBOARD_ACCENTS,
   isWidgetEnabled,
   moveWidget,
   toggleWidget,
@@ -46,10 +47,12 @@ import type {
   GitHubActivity,
   ProductivityInsight,
   SystemSnapshot,
+  DashboardAccent,
   WidgetId,
 } from "./types";
 
 const registry = createCoreRegistry();
+const accentLabels: Record<DashboardAccent, string> = { violet: "Violet", cyan: "Cyan", emerald: "Emerald", amber: "Amber" };
 const prettyTime = (value: number) =>
   new Intl.DateTimeFormat("en", {
     weekday: "long",
@@ -121,7 +124,7 @@ export default function App() {
     saveConfig(localStorage, next);
   };
   const visible = (id: WidgetId) => isWidgetEnabled(config, id);
-  const appClass = dark ? "app dark" : "app";
+  const appClass = `app ${dark ? "dark " : ""}accent-${config.accent}`;
   const enabledWidgets = useMemo(
     () => config.widgets.filter((widget) => widget.enabled),
     [config],
@@ -656,6 +659,24 @@ export default function App() {
                 <X size={18} />
               </button>
             </div>
+            <fieldset className="accent-picker">
+              <legend>Accent color</legend>
+              <p>Choose the shared highlight color for both light and dark modes.</p>
+              <div role="radiogroup" aria-label="Dashboard accent color" className="accent-options">
+                {DASHBOARD_ACCENTS.map(accent => (
+                  <button
+                    key={accent}
+                    type="button"
+                    className={`accent-option ${accent} ${config.accent === accent ? "selected" : ""}`}
+                    onClick={() => updateConfig({ ...config, accent })}
+                    role="radio"
+                    aria-checked={config.accent === accent}
+                  >
+                    <span aria-hidden="true" />{accentLabels[accent]}
+                  </button>
+                ))}
+              </div>
+            </fieldset>
             <div className="widget-settings">
               {config.widgets.map((widget, index) => {
                 const plugin = registry.get(widget.id);

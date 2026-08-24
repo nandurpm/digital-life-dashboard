@@ -33,7 +33,7 @@ The optional AI widget is **user-triggered** and uses `gpt-5-mini` to turn priva
 
 ## Theme and AI loading experience
 
-The overview header includes a dark mode toggle. Its explicit light/dark choice is stored only in the active browser and otherwise follows the operating-system preference. The AI insight widget uses a clear loading announcement and a subtle shimmer while its aggregate-only request is in progress. It keeps the last validated result visible during refresh and respects reduced-motion preferences. See [`docs/THEME_AND_ANIMATION.md`](docs/THEME_AND_ANIMATION.md) for details.
+The overview header includes a dark mode toggle. Its explicit light/dark choice is stored only in the active browser and otherwise follows the operating-system preference. The **Customize** dialog also offers a saved violet, cyan, emerald, or amber accent palette that applies in both themes; older local configurations safely retain the violet default. The AI insight widget uses a clear loading announcement and a subtle shimmer while its aggregate-only request is in progress. It keeps the last validated result visible during refresh and respects reduced-motion preferences. See [`docs/THEME_AND_ANIMATION.md`](docs/THEME_AND_ANIMATION.md) for details.
 
 ## Security and privacy
 
