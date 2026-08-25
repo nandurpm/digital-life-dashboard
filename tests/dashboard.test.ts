@@ -1,10 +1,19 @@
 import { describe, expect, it, vi } from "vitest";
+import { readFileSync } from "node:fs";
+import { resolve } from "node:path";
 import { defaultConfig, isWidgetEnabled, moveWidget, toggleWidget, validateConfig } from "../src/config";
 import { fetchGitHubActivity } from "../src/api";
 import { parseProductivityInsight, prepareInsightInput, requestProductivityInsights } from "../src/insights";
 import { MemoryStore, loadConfig, saveConfig } from "../src/storage";
 import { loadDarkMode, saveDarkMode } from "../src/theme";
 import { createCoreRegistry, WidgetRegistry } from "../src/widgets";
+
+describe("build hygiene", () => {
+  it("ignores generated TypeScript incremental build metadata", () => {
+    const ignoreRules = readFileSync(resolve(process.cwd(), ".gitignore"), "utf8");
+    expect(ignoreRules).toMatch(/^\*\.tsbuildinfo$/m);
+  });
+});
 
 describe("widget plugins", () => {
   it("registers each core widget once and rejects duplicate IDs", () => {
