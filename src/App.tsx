@@ -1,3 +1,10 @@
+/*
+ * ============================================================
+ * FILE: App.tsx
+ * PURPOSE: Composes the dashboard interface and coordinates widget settings, local persistence, public GitHub activity, browser system signals, themes, and user-triggered insights.
+ * ============================================================
+ */
+
 import { useEffect, useMemo, useRef, useState } from "react";
 import {
   Activity,

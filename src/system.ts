@@ -1,3 +1,10 @@
+/*
+ * ============================================================
+ * FILE: system.ts
+ * PURPOSE: Collects the browser-exposed system, storage, memory, runtime, and network estimates displayed by the dashboard.
+ * ============================================================
+ */
+
 import type { SystemSnapshot } from "./types";
 
 type ExtendedNavigator = Navigator & { deviceMemory?: number };

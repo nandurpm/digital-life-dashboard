@@ -1,3 +1,10 @@
+/*
+ * ============================================================
+ * FILE: config.ts
+ * PURPOSE: Defines default dashboard settings and validates, toggles, and reorders widget and quick-link configuration.
+ * ============================================================
+ */
+
 import { type DashboardConfig, type QuickLink, type WidgetConfig, widgetIds } from "./types";
 
 export const DEFAULT_QUICK_LINKS: QuickLink[] = [

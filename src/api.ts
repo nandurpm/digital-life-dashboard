@@ -1,3 +1,10 @@
+/*
+ * ============================================================
+ * FILE: api.ts
+ * PURPOSE: Fetches and normalizes an optional user's recent public GitHub activity without requiring credentials.
+ * ============================================================
+ */
+
 import type { GitHubActivity } from "./types";
 
 export async function fetchGitHubActivity(username: string, fetcher: typeof fetch = fetch): Promise<GitHubActivity[]> {

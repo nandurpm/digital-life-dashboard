@@ -1,3 +1,10 @@
+/*
+ * ============================================================
+ * FILE: server.mjs
+ * PURPOSE: Runs the dashboard HTTP server, serves the built SPA, and brokers privacy-minimized AI insight requests with server-side credentials.
+ * ============================================================
+ */
+
 import { createServer } from "node:http";
 import "dotenv/config";
 import { readFile } from "node:fs/promises";

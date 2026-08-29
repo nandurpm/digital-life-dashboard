@@ -1,3 +1,10 @@
+/*
+ * ============================================================
+ * FILE: storage.ts
+ * PURPOSE: Provides validated dashboard-configuration persistence through browser storage or an in-memory test adapter.
+ * ============================================================
+ */
+
 import { validateConfig } from "./config";
 import type { DashboardConfig } from "./types";
 

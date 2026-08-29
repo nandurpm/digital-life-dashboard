@@ -1,3 +1,10 @@
+/*
+ * ============================================================
+ * FILE: widgets.ts
+ * PURPOSE: Defines the widget plugin contract, registry, and built-in dashboard widget metadata.
+ * ============================================================
+ */
+
 import type { WidgetId } from "./types";
 
 export type WidgetPlugin = {

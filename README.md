@@ -97,3 +97,23 @@ The same Node.js commands work in Windows PowerShell, Windows Command Prompt, an
 
 This project follows its existing local-first and read-only boundaries. Demo/report content is generated or supplied through the documented local workflow; a hosted page does not provide hidden access to your device, private files, hardware, accounts, or network.
 
+## Project structure
+
+| Path | Responsibility |
+|---|---|
+| [`docs/`](docs/README.md) | Contains focused operational and interaction documentation that supplements the root project guide. |
+| [`examples/`](examples/README.md) | Contains small, reviewable example inputs that demonstrate Digital Life Dashboard's supported syntax and workflows. |
+| [`scripts/`](scripts/README.md) | Contains maintained helper entry points used to start or prepare Digital Life Dashboard consistently across local environments. |
+| [`src/`](src/README.md) | Contains the production implementation of Digital Life Dashboard: command handling, domain rules, storage, reports, and local serving as applicable. |
+| [`tests/`](tests/README.md) | Contains automated regression tests for Digital Life Dashboard's public behavior and important safety constraints. |
+
+Important root files include `package.json` for supported commands, `run-local.sh` and `run-local.cmd` where present for platform launchers, and this README as the primary developer entry point.
+
+## Documentation map
+
+- [`docs/README.md`](docs/README.md) — Contains focused operational and interaction documentation that supplements the root project guide.
+- [`examples/README.md`](examples/README.md) — Contains small, reviewable example inputs that demonstrate Digital Life Dashboard's supported syntax and workflows.
+- [`scripts/README.md`](scripts/README.md) — Contains maintained helper entry points used to start or prepare Digital Life Dashboard consistently across local environments.
+- [`src/README.md`](src/README.md) — Contains the production implementation of Digital Life Dashboard: command handling, domain rules, storage, reports, and local serving as applicable.
+- [`tests/README.md`](tests/README.md) — Contains automated regression tests for Digital Life Dashboard's public behavior and important safety constraints.
+

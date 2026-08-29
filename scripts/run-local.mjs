@@ -1,3 +1,10 @@
+/*
+ * ============================================================
+ * FILE: run-local.mjs
+ * PURPOSE: Validates local run modes and ports, then launches the Vite development server, preview server, or production Node server.
+ * ============================================================
+ */
+
 import { spawn } from "node:child_process";
 
 const mode = process.argv[2] ?? "dev";

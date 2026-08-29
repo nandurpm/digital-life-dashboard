@@ -1,3 +1,10 @@
+/*
+ * ============================================================
+ * FILE: types.ts
+ * PURPOSE: Defines the shared widget, configuration, GitHub activity, system snapshot, and productivity insight contracts.
+ * ============================================================
+ */
+
 export const widgetIds = ["clock", "system", "github", "notes", "links", "insights"] as const;
 export type WidgetId = (typeof widgetIds)[number];
 

@@ -1,3 +1,10 @@
+/*
+ * ============================================================
+ * FILE: dashboard.test.ts
+ * PURPOSE: Verifies configuration, persistence, plugins, public GitHub integration, aggregate-only AI input, response validation, and build hygiene.
+ * ============================================================
+ */
+
 import { describe, expect, it, vi } from "vitest";
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";

@@ -1,3 +1,10 @@
+/*
+ * ============================================================
+ * FILE: theme.ts
+ * PURPOSE: Loads and saves the user's explicit light or dark theme preference with a system-preference fallback.
+ * ============================================================
+ */
+
 export const THEME_STORAGE_KEY = "digital-life-dashboard-theme";
 
 export type ThemePreferenceStore = Pick<Storage, "getItem" | "setItem">;

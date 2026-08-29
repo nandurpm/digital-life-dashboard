@@ -1,3 +1,10 @@
+/*
+ * ============================================================
+ * FILE: insights.ts
+ * PURPOSE: Minimizes dashboard data into aggregate insight input, validates model responses, and calls the local insight endpoint.
+ * ============================================================
+ */
+
 import type { GitHubActivity, ProductivityInsight, SystemSnapshot } from "./types";
 
 export type InsightInput = {
